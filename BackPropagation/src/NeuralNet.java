@@ -115,7 +115,7 @@ public class NeuralNet {
   }
   
   public void writeFile(double[][] listOutputTest, double[] targetTest, String file) {
-	  file=file+"_result";
+	  file=file+"_resultBP.txt";
 	  PrintWriter writer;
 	try {
 		writer = new PrintWriter(file, "UTF-8");
@@ -292,7 +292,7 @@ public class NeuralNet {
 	Dataset dataset3 = new Dataset("insurance_dataset_norm.txt", 1193, 7, 0.80);
     int[] layers3 = {6, 9, 5, 1};
     NeuralNet nn3 = new NeuralNet(layers3);
-    nn3.backPropagation("A1-synthetic",dataset3.getTrainData(), dataset3.getTestData(), dataset3.getTrainTarget(), dataset3.getTestTarget());
+    nn3.backPropagation("insurance_dataset",dataset3.getTrainData(), dataset3.getTestData(), dataset3.getTrainTarget(), dataset3.getTestTarget());
   	
   }
 
